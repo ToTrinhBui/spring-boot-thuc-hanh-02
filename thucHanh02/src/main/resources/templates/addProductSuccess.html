@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Taco Cloud</title>
+</head>
+
+<body>
+	<h1>Add Product Successfully!</h1>
+	<table cellspacing="5" border="0">
+		<tr>
+			<td align="right"><label for="productCode">Code: </label></td>
+			<td align="left"><label th:text="${product.productCode}"></label></td>
+		</tr>
+		<tr>
+			<td align="right"><label for="productDescription">Description: </label></td>
+			<td align="left"><label th:text="${product.productDescription}"></label></td>
+		</tr>
+		<tr>
+			<td align="right"><label for="productPrice">Price: </label></td>
+			<td align="left"><label th:text="${product.productPrice}"></label></td>
+		</tr>
+	</table>
+	<p>To enter another Ingredient, click on the Back <br>
+		button in your browser or the Return button shown <br>
+		below.</p>
+	<form action="/products" method="get">
+		<input type="submit" value="Return">
+	</form>
+</body>
+
+</html>

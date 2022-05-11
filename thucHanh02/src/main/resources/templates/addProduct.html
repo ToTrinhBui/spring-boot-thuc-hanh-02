@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Add Product </title>
+</head>
+
+<body>
+	<form method="POST" th:action="@{/products/save}" th:object="${product}">
+		<h1>Product </h1>
+		<table cellspacing="5" border="0">
+			<tr>
+				<td align="right"><label for="productCode">Product Code: </label></td>
+				<td align="right"><input type="text" th:field="*{productCode}" placeholder="Product code"/></td>
+				<td style=" color: red;" th:if="${#fields.hasErrors('productCode')}" th:errors="*{productCode}">Code error</td>
+			</tr>
+			<tr>
+				<td align="right"><label for="productDescription">Product Description: </label></td>
+				<td align="right"><input type="text" th:field="*{productDescription}" placeholder="Product Discription"/></td>
+				<td style=" color: red;" th:if="${#fields.hasErrors('productDescription')}" th:errors="*{productDescription}">Description error</td>
+			</tr>
+			<tr>
+				<td align="right"><label for="productPrice">Product Price: </label></td>
+				<td align="right"><input type="text" th:field="*{productPrice}" placeholder="Product Price" /></td>
+				<td style=" color: red;" th:if="${#fields.hasErrors('productPrice')}" th:errors="*{productPrice}">Price error</td>
+			</tr>
+			<tr>
+				<td align="right"><br><input type="submit" value="Submit"></td>
+				<td><button style="margin-top: 10pt"><a th:href="@{/products}">View Products</a></button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
