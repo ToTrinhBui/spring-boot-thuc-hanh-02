@@ -52,8 +52,8 @@ public class ProductController {
 		return "addProduct";
 	}
 
-	@GetMapping("/edit")
-	public String editProduct(@RequestParam("code") String code, Model model) {
+	@GetMapping("/editForm")
+	public String editFormProduct(@RequestParam("code") String code, Model model) {
 		Optional<Product> productX = productRepo.findById(code);
 		productX.ifPresent(product -> model.addAttribute("product", product));
 		return "editProduct";
