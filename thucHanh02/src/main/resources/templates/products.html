@@ -19,7 +19,7 @@
 			<td th:text="${product.productCode}">code</td>
 			<td th:text="${product.productDescription}">description</td>
 			<td th:text="${product.productPrice}">price</td>
-			<td><a th:href="@{/products/edit?code={code}(code=${product.productCode})}">Edit</a></td>
+			<td><a th:href="@{/products/editForm?code={code}(code=${product.productCode})}">Edit</a></td>
 			<td><a th:href="@{/products/confirmDelete?code={code}(code=${product.productCode})}">Delete</a></td>
 		</tr>
 	</table>
